@@ -4,6 +4,23 @@ MYUSER="pyload"
 MYGID="10005"
 MYUID="10005"
 
+AutoUpgrade(){
+  if [ -e /etc/alpine-release ]; then
+    /sbin/apk --no-cache upgrade
+    /bin/rm -rf /var/cache/apk/*
+  elif [ -e /etc/os-release ]; then
+    if /bin/grep -q "NAME=\"Ubuntu\"" /etc/os-release ; then 
+      export DEBIAN_FRONTEND=noninteractive
+      /usr/bin/apt-get update
+      /usr/bin/apt-get -y --no-install-recommends dist-upgrade
+      /usr/bin/apt-get -y autoclean
+      /usr/bin/apt-get -y clean 
+      /usr/bin/apt-get -y autoremove
+      /bin/rm -rf /var/lib/apt/lists/*
+    fi
+  fi
+}
+
 ConfigureSsmtp () {
   # Customizing sstmp
   if [ -f /etc/ssmtp/ssmtp.conf ];then
