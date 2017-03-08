@@ -24,6 +24,7 @@ RUN apk --no-cache upgrade && \
       linux-headers \
       dbus-dev \
       dbus-glib-dev \
+      libev-dev \
       git && \
     pip --no-cache-dir install --upgrade setuptools pip && \
     pip --no-cache-dir install --upgrade \
@@ -74,6 +75,7 @@ RUN apk --no-cache upgrade && \
       mailx \
       dbus \
       dbus-glib \
+      libev \
       libffi \
       libcurl \
       jpeg \
