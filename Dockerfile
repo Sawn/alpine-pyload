@@ -68,7 +68,6 @@ RUN apk --no-cache upgrade && \
       readme_renderer \
       configparser \
       autoupgrade-ng \
-      pyload-ng \
       Sphinx && \
     git clone --depth 1 https://github.com/pyload/pyload.git /opt/pyload && \
     cd /opt/pyload/pyload/webui && \
