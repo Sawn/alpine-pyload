@@ -26,6 +26,7 @@ RUN apk --no-cache upgrade && \
       dbus-glib-dev \
       libev-dev \
       autoconf \
+      nodejs \
       git && \
     pip --no-cache-dir install --upgrade setuptools pip && \
     pip --no-cache-dir install --upgrade \
