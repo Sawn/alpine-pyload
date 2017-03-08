@@ -65,12 +65,16 @@ RUN apk --no-cache upgrade && \
       imagesize \
       Babel \
       readme_renderer \
+      configparser \
+      autoupgrade-ng \
+      pyload-ng \
       Sphinx && \
     git clone --depth 1 https://github.com/pyload/pyload.git /opt/pyload && \
     apk del --no-cache --purge \
       build-deps  && \
     apk add --no-cache --virtual=run-deps \
       python \
+      nodejs \
       ssmtp \
       mailx \
       dbus \
