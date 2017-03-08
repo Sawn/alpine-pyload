@@ -62,6 +62,7 @@ ConfigureUser () {
   fi
 }
 
+AutoUpgrade
 ConfigureUser
 ConfigureSsmtp
 

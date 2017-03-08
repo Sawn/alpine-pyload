@@ -14,35 +14,51 @@ RUN apk --no-cache upgrade && \
       make \
       gcc \
       g++ \
-      python-dev \
-      py2-pip \
+      python3-dev \
       libressl-dev \
       curl-dev \
       musl-dev \
       libffi-dev \
       jpeg-dev \
-      git \
-      py-pip  && \
-    pip --no-cache-dir install --upgrade setuptools && \
-    pip --no-cache-dir install --upgrade \
-      spidermonkey \
-      pyopenssl \
-      tesseract \
-      pycrypto \
-      Pillow \
-      feedparser \
-      BeautifulSoup \
-      thrift \
+      linux-headers \
+      dbus-dev \
+      dbus-glib-dev \
+      git && \
+    pip3 --no-cache-dir install --upgrade setuptools pip && \
+    pip3 --no-cache-dir install --upgrade \
+      argparse \
       beaker \
-      jinja2 \
-      pycurl && \
+      bottle \
+      daemonize \
+      future \
+      psutils \
+      pycurl \
+      requests \
+      tld \
+      validators \
+      beautifulsoup4 \
+      bitmath \
+      colorama \
+      dbus-python \
+      goslate \
+      IPy \
+      Js2Py \
+      Pillow \
+      pycrypto \
+      pyOpenSSL \
+      rarfile \
+      Send2Trash \
+      setproctitle \
+      watchdog && \
     git clone --depth 1 https://github.com/pyload/pyload.git /opt/pyload && \
     apk del --no-cache --purge \
       build-deps  && \
     apk add --no-cache --virtual=run-deps \
-      python \
+      python3 \
       ssmtp \
       mailx \
+      dbus \
+      dbus-glib \
       libffi \
       libcurl \
       jpeg \
