@@ -118,7 +118,7 @@ EOF2
       /bin/chown -R "${MYUSER}":"${MYUSER}" /config/scripts/download_finished/mail-notification.sh
       /bin/chmod 0775 /config/scripts/download_finished/mail-notification.sh
     fi
-    exec /sbin/su-exec "${MYUSER}" /usr/bin/python3 /opt/pyload/pyLoad.py --configdir=/config 
+    exec /sbin/su-exec "${MYUSER}" /usr/bin/python /opt/pyload/pyLoad.py --configdir=/config 
 fi
 
 exec "$@"

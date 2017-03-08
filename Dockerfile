@@ -14,7 +14,8 @@ RUN apk --no-cache upgrade && \
       make \
       gcc \
       g++ \
-      python3-dev \
+      python-dev \
+      py2-pip \
       libressl-dev \
       curl-dev \
       musl-dev \
@@ -24,8 +25,8 @@ RUN apk --no-cache upgrade && \
       dbus-dev \
       dbus-glib-dev \
       git && \
-    pip3 --no-cache-dir install --upgrade setuptools pip && \
-    pip3 --no-cache-dir install --upgrade \
+    pip --no-cache-dir install --upgrade setuptools pip && \
+    pip --no-cache-dir install --upgrade \
       argparse \
       beaker \
       bottle \
@@ -38,7 +39,9 @@ RUN apk --no-cache upgrade && \
       validators \
       beautifulsoup4 \
       bitmath \
+      bjoern \
       colorama \
+      colorlog \
       dbus-python \
       goslate \
       IPy \
@@ -49,12 +52,24 @@ RUN apk --no-cache upgrade && \
       rarfile \
       Send2Trash \
       setproctitle \
-      watchdog && \
+      watchdog \
+      webencodings \
+      jinja2 \
+      html5lib \
+      alabaster \
+      Pygments \
+      docutils \
+      bleach \
+      snowballstemmer \
+      imagesize \
+      Babel \
+      readme_renderer \
+      Sphinx && \
     git clone --depth 1 https://github.com/pyload/pyload.git /opt/pyload && \
     apk del --no-cache --purge \
       build-deps  && \
     apk add --no-cache --virtual=run-deps \
-      python3 \
+      python \
       ssmtp \
       mailx \
       dbus \
