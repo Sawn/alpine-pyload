@@ -25,6 +25,7 @@ RUN apk --no-cache upgrade && \
       dbus-dev \
       dbus-glib-dev \
       libev-dev \
+      autoconf \
       git && \
     pip --no-cache-dir install --upgrade setuptools pip && \
     pip --no-cache-dir install --upgrade \
@@ -70,6 +71,10 @@ RUN apk --no-cache upgrade && \
       pyload-ng \
       Sphinx && \
     git clone --depth 1 https://github.com/pyload/pyload.git /opt/pyload && \
+    cd /opt/pyload/pyload/webui && \
+    npm install && \
+    cd /opt/pyload && \
+    python setup.py install && \
     apk del --no-cache --purge \
       build-deps  && \
     apk add --no-cache --virtual=run-deps \
