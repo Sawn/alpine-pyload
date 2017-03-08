@@ -31,7 +31,7 @@ RUN apk --no-cache upgrade && \
       bottle \
       daemonize \
       future \
-      psutils \
+      psutil \
       pycurl \
       requests \
       tld \
