@@ -1,5 +1,6 @@
 FROM alpine:latest
 LABEL maintainer "DI GREGORIO Nicolas <nicolas.digregorio@gmail.com>"
+LABEL maintainer "Sawn <sawn01@gmail.com>"
 
 ### Environment variables
 ENV LANG='en_US.UTF-8' \
@@ -13,8 +14,8 @@ RUN apk --no-cache upgrade && \
       make \
       gcc \
       g++ \
-      python-dev \
-      py2-pip \
+      python3-dev \
+      py3-pip \
       libressl-dev \
       curl-dev \
       musl-dev \
@@ -22,25 +23,24 @@ RUN apk --no-cache upgrade && \
       jpeg-dev \
       git \
       zlib-dev \
-      py-pip  && \
+      py3-openssl
+      py3-crypto 
+      py3-pillow 
+      py3-feedparser 
+      py3-jinja2 
+      py3-curl && \
     pip --no-cache-dir install --upgrade setuptools && \
     pip --no-cache-dir install --upgrade \
       spidermonkey \
-      pyopenssl \
-      tesseract \
-      pycrypto \
-      Pillow \
-      feedparser \
+      tesseract-ocr \
       BeautifulSoup \
       thrift \
-      beaker \
-      jinja2 \
-      pycurl && \
+      beaker && \
     git clone --depth 1 https://github.com/pyload/pyload.git -b stable /opt/pyload && \
     apk del --no-cache --purge \
       build-deps  && \
     apk add --no-cache --virtual=run-deps \
-      python \
+      python3 \
       ssmtp \
       mailx \
       libffi \
