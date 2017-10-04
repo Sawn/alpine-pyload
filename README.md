@@ -1,5 +1,5 @@
-# docker-alp-pyload
-Install pyload git version into an Alpine Linux container
+# alpine-pyload
+Install pyload latest git version into an Alpine Linux container
 
 ![pyload](https://github.com/pyload/pyload/blob/master/pyload/webui/themes/Default/img/pyload-logo.png)
 
@@ -21,7 +21,7 @@ https://github.com/pyload/pyload
       -e DOCKMAILDOMAIN=<originating mail domain> \
       -p 8000:8000  \
       -p 7227:7227  \
-	  -p 9666:9666 digrouz/docker-alp-pyload
+	  -p 9666:9666 sawn/alpine-pyload
 
 
 ## Environment Variables
