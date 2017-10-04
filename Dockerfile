@@ -23,12 +23,12 @@ RUN apk --no-cache upgrade && \
       jpeg-dev \
       git \
       zlib-dev \
-      py3-openssl
-      py3-crypto 
-      py3-pillow 
-      py3-feedparser 
-      py3-jinja2 
-      py3-curl 
+      py3-openssl \
+      py3-crypto \
+      py3-pillow \
+      py3-feedparser \
+      py3-jinja2 \
+      py3-curl \
       tesseract-ocr && \
     pip --no-cache-dir install --upgrade setuptools && \
     pip --no-cache-dir install --upgrade \
