@@ -47,7 +47,9 @@ RUN apk --no-cache upgrade && \
       libffi \
       libcurl \
       jpeg \
-      unrar \
+      unrar-free \
+      unzip \
+      p7zip \
       zlib \
       su-exec && \
     rm -rf /tmp/* \
