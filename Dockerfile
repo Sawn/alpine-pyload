@@ -28,7 +28,8 @@ RUN apk --no-cache upgrade && \
       py3-pillow 
       py3-feedparser 
       py3-jinja2 
-      py3-curl && \
+      py3-curl 
+      tesseract-ocr && \
     pip --no-cache-dir install --upgrade setuptools && \
     pip --no-cache-dir install --upgrade \
       spidermonkey \
